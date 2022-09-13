@@ -8,7 +8,7 @@ import com.example.moviesapp.R
 import com.example.moviesapp.data.models.MovieModel
 
 class FamousMovieAdapter(
-    private val movieList: ArrayList<MovieModel>
+    private val movieList: List<MovieModel>
 ) : RecyclerView.Adapter<FamousMovieAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -16,7 +16,7 @@ class FamousMovieAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.node_famous_movie, parent, false)
+            .inflate(R.layout.movie_row_item, parent, false)
         return ViewHolder(view)
     }
 
