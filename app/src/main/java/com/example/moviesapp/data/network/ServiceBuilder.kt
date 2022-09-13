@@ -11,7 +11,7 @@ object ServiceBuilder {
 
     private val retrofit = Retrofit
             .Builder()
-            .baseUrl("https://api.jsonbin.io/")
+            .baseUrl("https://api.jsonbin.io")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
