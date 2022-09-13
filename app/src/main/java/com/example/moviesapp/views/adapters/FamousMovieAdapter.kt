@@ -3,13 +3,9 @@ package com.example.moviesapp.views.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesapp.R
 import com.example.moviesapp.data.models.MovieModel
-import com.squareup.picasso.Picasso
 
 class FamousMovieAdapter(
     private val movieList: ArrayList<MovieModel>

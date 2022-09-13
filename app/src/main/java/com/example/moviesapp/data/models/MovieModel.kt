@@ -1,9 +1,6 @@
 package com.example.moviesapp.data.models
 
-import android.content.Context
-import android.content.Intent
 import java.io.Serializable
-import java.text.SimpleDateFormat
 
 data class MovieModel(
     val id: String,

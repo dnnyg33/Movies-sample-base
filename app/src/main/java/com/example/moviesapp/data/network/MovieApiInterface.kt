@@ -1,7 +1,7 @@
 package com.example.moviesapp.data.network
 
-import com.example.moviesapp.data.network.responses.MoviesResponse
 import com.example.moviesapp.data.network.responses.MovieRatingsResponse
+import com.example.moviesapp.data.network.responses.MoviesResponse
 import retrofit2.Call
 import retrofit2.http.GET
 
