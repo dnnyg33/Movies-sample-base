@@ -2,7 +2,7 @@ Build an Android application that has two screens. One shows a list of movies (f
 
   
 
-
+![Diagram](Picture1.png)
 
 
 About data:
