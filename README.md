@@ -11,7 +11,7 @@ About data:
 -	This json file contains an array of Movies
 -	Download from https://api.jsonbin.io
     -	Get movie info from: https://api.jsonbin.io/v3/b/630ce21d5c146d63ca84a405
-    -	Access rating from: https://api.jsonbin.io/v3/b/630ce21d5c146d63ca84a405
+    -	Access rating from: https://api.jsonbin.io/v3/b/630ce2395c146d63ca84a426 
 
 -	Fields 
     -	ID  e.g. "Himlens barn-1997" (Unique Identifier for the movie)
@@ -25,7 +25,7 @@ About data:
 
 2.	`MovieRatings.json`
   -	This file contains user ratings for Movies
-  -	Download from https://api.jsonbin.io/b/5f2c4951dddf413f95be721c
+  -	Download from https://api.jsonbin.io/b/630ce2395c146d63ca84a426 
   -	Fields
     -	ID e.g. "Himlens barn-1997" (Unique Identifier for the movie)
     -	Ratings e.g. [6, 7, 4, 10, 5] - each rating is a score out of 10
