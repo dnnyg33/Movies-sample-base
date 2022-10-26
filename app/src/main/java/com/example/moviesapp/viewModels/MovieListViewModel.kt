@@ -37,7 +37,7 @@ class MovieListViewModel
     private fun MoviesModelItem.toMovieModel(): MovieRowViewState {
         return MovieRowViewState(
             title = title,
-            posterurl = posterurl,
+            posterurl = posterUrl,
             duration = duration,
             releaseDate = releaseDate,
             storyline = storyline,

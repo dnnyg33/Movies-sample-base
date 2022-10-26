@@ -26,11 +26,4 @@ object MainModule {
         return ServiceBuilder.buildService(MovieApiInterface::class.java)
     }
 
-
-    @Provides
-    @Singleton
-    fun provideDispatcher(): CoroutineDispatcher{
-        return Dispatchers.IO
-    }
-
 }

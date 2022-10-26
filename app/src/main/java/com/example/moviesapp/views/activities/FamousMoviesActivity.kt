@@ -23,12 +23,7 @@ class FamousMoviesActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(inflater)
         setContentView(binding.root)
 
-        lifecycleScope.launch {
-            viewModel.movies.collectLatest {
-                val famousMovieAdapter = FamousMovieAdapter(it)
-                binding.list.adapter = famousMovieAdapter
-            }
-        }
+
     }
 
 

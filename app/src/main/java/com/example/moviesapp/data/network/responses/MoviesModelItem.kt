@@ -5,7 +5,7 @@ data class MoviesModelItem(
     val duration: String,
     val genres: List<String>,
     val id: String,
-    val posterurl: String,
+    val posterUrl: String,
     val releaseDate: String,
     val storyline: String,
     val title: String,
