@@ -1,11 +1,17 @@
 package com.example.moviesapp.views.activities
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.moviesapp.R
+import com.example.moviesapp.databinding.ActivityMainBinding
 import com.example.moviesapp.viewModels.MovieListViewModel
+import com.example.moviesapp.views.adapters.FamousMovieAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class FamousMoviesActivity : AppCompatActivity() {
@@ -13,8 +19,16 @@ class FamousMoviesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val inflater = LayoutInflater.from(this)
+        val binding = ActivityMainBinding.inflate(inflater)
+        setContentView(binding.root)
 
+        lifecycleScope.launch {
+            viewModel.movies.collectLatest {
+                val famousMovieAdapter = FamousMovieAdapter(it)
+                binding.list.adapter = famousMovieAdapter
+            }
+        }
     }
 
 

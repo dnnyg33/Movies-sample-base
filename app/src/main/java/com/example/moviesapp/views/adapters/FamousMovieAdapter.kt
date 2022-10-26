@@ -5,13 +5,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesapp.R
-import com.example.moviesapp.data.models.MovieModel
+import com.example.moviesapp.data.models.MovieRowViewState
 
 class FamousMovieAdapter(
-    private val movieList: List<MovieModel>
+    private val movieList: List<MovieRowViewState>
 ) : RecyclerView.Adapter<FamousMovieAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

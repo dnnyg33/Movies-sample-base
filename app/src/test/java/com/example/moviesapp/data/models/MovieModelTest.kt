@@ -7,11 +7,11 @@ import org.junit.runners.JUnit4
 
 @RunWith(JUnit4::class)
 class MovieModelTest{
-    private lateinit var movieModel: MovieModel
+    private lateinit var movieModel: MovieRowViewState
 
     @Test
     fun `test average rating returns correct average`(){
-        movieModel = MovieModel(
+        movieModel = MovieRowViewState(
             "Himlens barn-1997",
             "Himlens barn",
             "https://images-na.ssl-images-amazon.com/images/M/MV5BZTYwZWQ4ZTQtZWU0MS00N2YwLWEzMDItZWFkZWY0MWVjODVhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY446_SX290_AL_.jpg",
@@ -28,7 +28,7 @@ class MovieModelTest{
 
     @Test
     fun `rating above 5 is thumbs up`(){
-        movieModel = MovieModel(
+        movieModel = MovieRowViewState(
             "Himlens barn-1997",
             "Himlens barn",
             "https://images-na.ssl-images-amazon.com/images/M/MV5BZTYwZWQ4ZTQtZWU0MS00N2YwLWEzMDItZWFkZWY0MWVjODVhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY446_SX290_AL_.jpg",
@@ -45,7 +45,7 @@ class MovieModelTest{
 
     @Test
     fun `rating below 5 is not thumbs up`(){
-        movieModel = MovieModel(
+        movieModel = MovieRowViewState(
             "Himlens barn-1997",
             "Himlens barn",
             "https://images-na.ssl-images-amazon.com/images/M/MV5BZTYwZWQ4ZTQtZWU0MS00N2YwLWEzMDItZWFkZWY0MWVjODVhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY446_SX290_AL_.jpg",
@@ -62,7 +62,7 @@ class MovieModelTest{
 
     @Test
     fun `rating of exactly 5 is not thumbs up`(){
-        movieModel = MovieModel(
+        movieModel = MovieRowViewState(
             "Himlens barn-1997",
             "Himlens barn",
             "https://images-na.ssl-images-amazon.com/images/M/MV5BZTYwZWQ4ZTQtZWU0MS00N2YwLWEzMDItZWFkZWY0MWVjODVhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY446_SX290_AL_.jpg",
@@ -79,7 +79,7 @@ class MovieModelTest{
 
     @Test
     fun `movie that is less than 90 minutes is short`(){
-        movieModel = MovieModel(
+        movieModel = MovieRowViewState(
             "Himlens barn-1997",
             "Himlens barn",
             "https://images-na.ssl-images-amazon.com/images/M/MV5BZTYwZWQ4ZTQtZWU0MS00N2YwLWEzMDItZWFkZWY0MWVjODVhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY446_SX290_AL_.jpg",
@@ -96,7 +96,7 @@ class MovieModelTest{
 
     @Test
     fun `movie that is more than 90 minutes is not short`(){
-        movieModel = MovieModel(
+        movieModel = MovieRowViewState(
             "Himlens barn-1997",
             "Himlens barn",
             "https://images-na.ssl-images-amazon.com/images/M/MV5BZTYwZWQ4ZTQtZWU0MS00N2YwLWEzMDItZWFkZWY0MWVjODVhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY446_SX290_AL_.jpg",
@@ -113,7 +113,7 @@ class MovieModelTest{
 
     @Test
     fun `movie that is exactly 90 minutes is not short`(){
-        movieModel = MovieModel(
+        movieModel = MovieRowViewState(
             "Himlens barn-1997",
             "Himlens barn",
             "https://images-na.ssl-images-amazon.com/images/M/MV5BZTYwZWQ4ZTQtZWU0MS00N2YwLWEzMDItZWFkZWY0MWVjODVhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY446_SX290_AL_.jpg",
@@ -130,7 +130,7 @@ class MovieModelTest{
 
     @Test
     fun `format duration formats properly`(){
-        movieModel = MovieModel(
+        movieModel = MovieRowViewState(
             "Himlens barn-1997",
             "Himlens barn",
             "https://images-na.ssl-images-amazon.com/images/M/MV5BZTYwZWQ4ZTQtZWU0MS00N2YwLWEzMDItZWFkZWY0MWVjODVhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY446_SX290_AL_.jpg",
@@ -147,7 +147,7 @@ class MovieModelTest{
 
     @Test
     fun `format release date formats properly`(){
-        movieModel = MovieModel(
+        movieModel = MovieRowViewState(
             "Himlens barn-1997",
             "Himlens barn",
             "https://images-na.ssl-images-amazon.com/images/M/MV5BZTYwZWQ4ZTQtZWU0MS00N2YwLWEzMDItZWFkZWY0MWVjODVhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY446_SX290_AL_.jpg",

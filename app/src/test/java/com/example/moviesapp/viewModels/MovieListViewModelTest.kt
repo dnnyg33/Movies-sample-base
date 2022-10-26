@@ -1,7 +1,7 @@
 package com.example.moviesapp.viewModels
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.moviesapp.data.models.MovieModel
+import com.example.moviesapp.data.models.MovieRowViewState
 import com.example.moviesapp.data.repositories.MovieRepository
 import com.google.common.truth.Truth.assertThat
 import io.mockk.coEvery
@@ -26,8 +26,8 @@ class MovieListViewModelTest{
 
     @Before
     fun setUp(){
-        coEvery { fakeMovieRepo.getMovieList() } returns arrayListOf<MovieModel>(
-            MovieModel(
+        coEvery { fakeMovieRepo.getMovieList() } returns arrayListOf<MovieRowViewState>(
+            MovieRowViewState(
                 "1",
                 "test1",
                 "test",
@@ -39,7 +39,7 @@ class MovieListViewModelTest{
                 "1999",
                 listOf(10,10,10,10,10)
             ),
-            MovieModel(
+            MovieRowViewState(
                 "2",
                 "test1",
                 "test",
@@ -51,7 +51,7 @@ class MovieListViewModelTest{
                 "1992",
                 listOf(2,2,2,2,2)
             ),
-            MovieModel(
+            MovieRowViewState(
                 "3",
                 "test1",
                 "test",
@@ -62,7 +62,7 @@ class MovieListViewModelTest{
                 "test",
                 "1975",
                 listOf(4,4,4,4,4)
-            ),            MovieModel(
+            ),            MovieRowViewState(
                 "4",
                 "test1",
                 "test",
@@ -75,15 +75,15 @@ class MovieListViewModelTest{
                 listOf(7,7,7,7,7)
             )
         )
-        movieListViewModel = MovieListViewModel(fakeMovieRepo, testDispatcher)
+        movieListViewModel = MovieListViewModel(fakeMovieRepo)
     }
 
 
     @Test
     fun `movies are properly sorted by rating, movies before minimum year are removed`(){
         assertThat(movieListViewModel.moviesList.value).isEqualTo(
-            arrayListOf<MovieModel>(
-                MovieModel(
+            arrayListOf<MovieRowViewState>(
+                MovieRowViewState(
                     "1",
                     "test1",
                     "test",
@@ -95,7 +95,7 @@ class MovieListViewModelTest{
                     "1999",
                     listOf(10,10,10,10,10)
                 ),
-                MovieModel(
+                MovieRowViewState(
                     "4",
                     "test1",
                     "test",
@@ -107,7 +107,7 @@ class MovieListViewModelTest{
                     "2005",
                     listOf(7,7,7,7,7)
                 ),
-                MovieModel(
+                MovieRowViewState(
                     "2",
                     "test1",
                     "test",

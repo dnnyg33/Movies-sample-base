@@ -1,3 +1,5 @@
 package com.example.moviesapp.data.network.responses
 
-class MoviesResponse : ArrayList<MoviesModelItem>()
+data class MoviesResponse(
+    val record: List<MoviesModelItem>,
+)

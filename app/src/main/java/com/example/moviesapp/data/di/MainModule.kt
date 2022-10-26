@@ -17,7 +17,7 @@ object MainModule {
     @Provides
     @Singleton
     fun provideMovieRepository(): MovieRepository{
-        return MovieRepository()
+        return MovieRepository(provideMovieApiInterface())
     }
 
     @Provides
