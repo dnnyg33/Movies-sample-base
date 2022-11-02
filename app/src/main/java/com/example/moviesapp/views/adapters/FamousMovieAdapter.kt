@@ -13,7 +13,6 @@ class FamousMovieAdapter(
 ) : RecyclerView.Adapter<FamousMovieAdapter.ViewHolder>() {
 
     class ViewHolder(private val binding: MovieRowItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        // val context = binding.
         fun bind(movie: MovieItemViewState) {
             with(binding) {
                 tvMovieGenres.text = movie.genres

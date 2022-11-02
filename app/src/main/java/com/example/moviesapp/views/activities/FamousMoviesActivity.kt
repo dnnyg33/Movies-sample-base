@@ -18,14 +18,12 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class FamousMoviesActivity : AppCompatActivity() {
-    private val viewModel: MovieListViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val inflater = LayoutInflater.from(this)
         val binding = ActivityMainBinding.inflate(inflater)
         setContentView(binding.root)
-
     }
 
 

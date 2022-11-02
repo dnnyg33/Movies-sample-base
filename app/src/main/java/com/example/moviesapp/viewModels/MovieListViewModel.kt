@@ -42,10 +42,10 @@ class MovieListViewModel
             releaseDate = releaseDate,
             storyline = storyline,
             year = year,
-            averageRating = "TODO",
-            genres = "TODO",
-            actors = "TODO",
-            shortDescription = "TODO"
+            averageRating = "TODO rating",
+            genres = "TODO genres",
+            actors = "TODO actors",
+            shortDescription = "TODO description"
         )
     }
 }
