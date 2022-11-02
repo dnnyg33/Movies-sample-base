@@ -2,7 +2,7 @@ package com.example.moviesapp.viewModels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.moviesapp.data.models.MovieRowViewState
+import com.example.moviesapp.data.models.MovieItemViewState
 import com.example.moviesapp.data.network.responses.MoviesModelItem
 import com.example.moviesapp.data.repositories.MovieRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,8 +17,8 @@ class MovieListViewModel
     private val movieRepo: MovieRepository
 ) : ViewModel() {
 
-    private val _movies = MutableStateFlow<List<MovieRowViewState>>(emptyList())
-    val movies : StateFlow<List<MovieRowViewState>> = _movies
+    private val _movies = MutableStateFlow<List<MovieItemViewState>>(emptyList())
+    val movies : StateFlow<List<MovieItemViewState>> = _movies
 
 
     init {
@@ -27,15 +27,15 @@ class MovieListViewModel
             if (response.isSuccessful) {
                 _movies.value = response.body()?.run {
                     record.map {
-                        it.toMovieModel()
+                        it.toMovieItemViewState()
                     }
                 } ?: emptyList()
             }
         }
     }
 
-    private fun MoviesModelItem.toMovieModel(): MovieRowViewState {
-        return MovieRowViewState(
+    private fun MoviesModelItem.toMovieItemViewState(): MovieItemViewState {
+        return MovieItemViewState(
             title = title,
             posterurl = posterUrl,
             duration = duration,
@@ -45,7 +45,7 @@ class MovieListViewModel
             averageRating = "TODO",
             genres = "TODO",
             actors = "TODO",
-            isShort = false
+            shortDescription = "TODO"
         )
     }
 }

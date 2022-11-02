@@ -1,27 +1,39 @@
 package com.example.moviesapp.views.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.moviesapp.R
-import com.example.moviesapp.data.models.MovieRowViewState
+import com.example.moviesapp.data.models.MovieItemViewState
+import com.example.moviesapp.databinding.MovieRowItemBinding
 
 class FamousMovieAdapter(
-    private val movieList: List<MovieRowViewState>
+    private val movieList: List<MovieItemViewState>
 ) : RecyclerView.Adapter<FamousMovieAdapter.ViewHolder>() {
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
+    class ViewHolder(private val binding: MovieRowItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        // val context = binding.
+        fun bind(movie: MovieItemViewState) {
+            with(binding) {
+                tvMovieGenres.text = movie.genres
+                tvMovieRating.text = movie.averageRating
+                tvMovieShort.text = movie.shortDescription
+                tvMovieTitle.text = movie.title
+                tvMovieReleaseDate.text = movie.releaseDate
+                Glide.with(binding.root.context).load(movie.posterurl).into(ivMoviePosterImage)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.movie_row_item, parent, false)
-        return ViewHolder(view)
+        val binding = MovieRowItemBinding.inflate(LayoutInflater.from(parent.context))
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val movie = movieList[position]
+        holder.bind(movie)
     }
 
     override fun getItemCount(): Int {

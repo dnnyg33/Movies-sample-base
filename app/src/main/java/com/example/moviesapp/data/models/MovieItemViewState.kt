@@ -2,7 +2,7 @@ package com.example.moviesapp.data.models
 
 import java.io.Serializable
 
-data class MovieRowViewState(
+data class MovieItemViewState(
     val title: String,
     val posterurl: String,
     val duration: String,
@@ -12,7 +12,7 @@ data class MovieRowViewState(
     val storyline: String,
     val year: String,
     val averageRating: String,
-    val isShort: Boolean
+    val shortDescription: String
 ): Serializable{
 }
 
