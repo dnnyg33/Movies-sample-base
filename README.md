@@ -42,7 +42,7 @@ Requirement:
         -	Genres
         -	Average user rating (This is mean of all user rating scores for the movie from `MovieRatings.json`)
         -	Short category
-        -	If the movie is less than 90 minutes add a view that says "Short"
+          -	If the movie is less than 90 minutes add a view that says "Short"
     -	Clicking on row should open detail page for that movie
     -	Movies should be sorted by rating with highest ratings first.
     -	Do not show any movies that have a release date before 1980
